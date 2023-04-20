@@ -5,19 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to my Application</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="../static/css/styles.css" />
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles_index.css}" href="../static/css/styles_index.css" />
 
   <link rel="icon" type="image/x-icon" th:href="@{/pictures/favicon.png}" href="../static/pictures/favicon.png">
+  <!-- <img th:src="@{/pictures/logo.png}" alt="" src="../static/pictures/logo.png"> -->
 
 </head>
 
 <body>
 
-  <img th:src="@{/pictures/logo.png}" alt="" src="../static/pictures/logo.png">
+<div class="container">
 
-<div>
-  <h1>Welcome to my application</h1>
-  <a class="h2" th:href="@{/wishes}">Manage Wishes</a>
+  <div class="brand-logo"></div>
+
+  <h1>Wishleaf</h1>
+
+  <div class="button-container">
+    <a class="button-manage-wishes" th:href="@{/wishes}">Manage Wishes</a>
+  </div>
+
+  <h5>A personal wishlist<br>by Martin Grosen</h5>
+
 </div>
 
 </body>
