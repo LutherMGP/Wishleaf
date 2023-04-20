@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Wishes</title>
+  <link rel="stylesheet" th:href="@{css/styles.css}" href="../static/css/styles.css" />
+
+  <link rel="icon" type="image/x-icon" th:href="@{/pictures/favicon.png}" href="../static/pictures/favicon.png" />
+
+</head>
+
+<body>
+
+  <img th:src="@{/pictures/logo.png}" alt="" src="../static/pictures/logo.png">
+
+<div>
+  <div><h2>Manage Wishes</h2></div>
+  <div>
+    <a class="h3" th:href="@{/wishes/new}">Add New Wish</a>
+  </div>
+
+  <div th:if="${message}" class="message">
+    [[${message}]]
+  </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Link</th>
+          <th>Fulfilled</th>
+          <th>  </th>
+        </tr>
+      </thead>
+      <th:block th:each="wish : ${listWishes}">
+        <tr>
+          <td>[[${wish.id}]]</td>
+          <td>[[${wish.name}]]</td>
+          <td>[[${wish.description}]]</td>
+          <td>[[${wish.link}]]</td>
+          <td>[[${wish.enabled}]]</td>
+          <td>
+            <a class="h4" th:href="@{'/wishes/edit/' + ${wish.id}}">Edit</a>
+            <a class="h4" th:href="@{'/wishes/delete/' + ${wish.id}}">Delete</a>
+          </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+
+</html>

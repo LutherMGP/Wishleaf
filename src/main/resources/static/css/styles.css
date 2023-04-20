@@ -1,0 +1,116 @@
+/* Fonte benyttet generelt i web-applikationen */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.h2 {
+    font-size: 26px;
+}
+
+.h3 {
+    font-size: 20px;
+}
+
+.h4 {
+    font-size: 15px;
+}
+
+/* Header indeholdende logo billede samt knap der tilføjer ønske til listen */
+header {
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+/* Definition af logo størrelse og afstand til knap */
+img {
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+/* Generel specifikation for handlingsknapper inklusiv "Hover" specifikation */
+button {
+    text-decoration: none;
+    background-color: #8cbf3b;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #597d21;
+}
+
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8cbf3b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.custom-button:hover {
+    background-color: #597d21;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Message */
+
+.message {
+    text-decoration: none;
+    background-color: #8dc9ff;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Form */
+
+form {
+    font-size: 30px;
+}
+
+label {
+    display: block;
+    margin: 10px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #8cbf3b;
+}

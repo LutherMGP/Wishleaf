@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[[${pageTitle}]]</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles_wish_form.css}" href="../static/css/styles_wish_form.css" />
+  <link rel="icon" type="image/x-icon" th:href="@{/pictures/favicon.png}" href="../static/pictures/favicon.png">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="brand-logo"></div>
+  <div class="brand-title">[[${pageTitle}]]</div>
+
+  <form th:action="@{/wishes/save}" method="post" th:object="${wish}">
+
+    <label for="fulfilled-checkbox" class="checkbox-label">WISH FULFILLED</label>
+    <input type="checkbox" id="fulfilled-checkbox" th:field="*{enabled}" class="checkbox-input"/>
+
+    <input type="hidden" th:field="*{id}">
+
+      <div class="inputs">
+
+        <label>NAME</label>
+        <input type="text" th:field="*{name}" required minlength="1" maxlength="45" placeholder="Required"/>
+
+        <label>DESCRIPTION</label>
+        <input type="text" th:field="*{description}" placeholder="Optional"/>
+
+        <label>URL</label>
+        <input type="text" th:field="*{link}" placeholder="Optional"/>
+        <!--
+        <div>
+          <label>WISH FULFILLED</label>
+          <div>
+            <input type="checkbox" th:field="*{enabled}" />
+          </div>
+        </div>
+        -->
+
+
+      </div>
+
+      <div class="button-container">
+        <button class=button-save type="submit">Save</button>
+        <button class=button-cancel type="button" onclick="cancelForm()">Cancel</button>
+      </div>
+
+      <script type="text/javascript">
+        function cancelForm() {
+          window.location = "[[@{/wishes}]]";
+        }
+      </script>
+
+  </form>
+
+</div>
+
+<!--
+  <img th:src="@{/pictures/logo.png}" alt="" src="../static/pictures/logo.png">
+
+  <div>
+    <div><h2>[[${pageTitle}]]</h2></div>
+
+    <form th:action="@{/wishes/save}" method="post" th:object="${wish}">
+
+      <input type="hidden" th:field="*{id}">
+
+      <div>
+
+        <label>Name (required):</label>
+        <div>
+          <input type="text" th:field="*{name}" required minlength="1" maxlength="45"/>
+        </div>
+
+        <label>Description:</label>
+        <div>
+          <input type="text" th:field="*{description}" required minlength="8" maxlength="200"/>
+        </div>
+
+        <label>Link:</label>
+        <div>
+          <input type="text" th:field="*{link}" required minlength="8" maxlength="1000"/>
+        </div>
+
+        <label>Wish fulfilled</label>
+        <div>
+          <input type="checkbox" th:field="*{enabled}" />
+        </div>
+
+      </div>
+
+      <div>
+        <button type="submit">Save</button>
+        <button type="button" onclick="cancelForm()">Cancel</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <script type="text/javascript">
+    function cancelForm() {
+      window.location = "[[@{/wishes}]]";
+    }
+  </script>
+-->
+
+<!--
+
+<div class="container">
+  <div class="brand-logo"></div>
+  <div class="brand-title">NEW WISH</div>
+  <div class="inputs">
+    <label>NAME</label>
+    <input type="text" placeholder="example: iPhone 14" />
+    <label>DESCRIPTION</label>
+    <input type="text" placeholder="example: Color Blue" />
+    <label>URL</label>
+    <input type="url" placeholder="example: https://wishleaf.com/" />
+    <div class="button-container">
+      <button type="submit" class="button-save">SAVE</button>
+      <button type="submit" class="button-cancel">CANCEL</button>
+    </div>
+  </div>
+</div>
+
+-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to my Application</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="../static/css/styles.css" />
+
+  <link rel="icon" type="image/x-icon" th:href="@{/pictures/favicon.png}" href="../static/pictures/favicon.png">
+
+</head>
+
+<body>
+
+  <img th:src="@{/pictures/logo.png}" alt="" src="../static/pictures/logo.png">
+
+<div>
+  <h1>Welcome to my application</h1>
+  <a class="h2" th:href="@{/wishes}">Manage Wishes</a>
+</div>
+
+</body>
+
+</html>
